@@ -1,0 +1,67 @@
+:root {
+    --mic-menu-height:50px;
+}
+
+
+
+.mic_editor {
+    height: 70vh;
+    width: 95vw;
+    background: #ccc;
+    margin: auto;
+    padding: 0px;
+    overflow: hidden;
+    position: relative;
+}
+
+.mic_menu {
+    height: var(--mic-menu-height);
+    width: 100%;
+    background: #eee;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: #ccc 0px 0px 5px 0px;
+    z-index: 2;
+    position: relative;
+}
+
+.mic_main {
+    height: calc(70vh - var(--mic-menu-height) - (15px * 2));
+    width: calc(100% - (20px * 2));
+    overflow: scroll;
+    background: #ddb;
+    z-index: 1;
+    position: relative;
+    outline: none;
+    padding: 15px 20px;
+}
+
+
+.items_container {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    height: var(--mic-menu-height);
+}
+
+.items_container li {
+    list-style: none;
+    min-width: 30px;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    height: var(--mic-menu-height);
+    line-height: var(--mic-menu-height);
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-right: solid #ddd 1.5px;
+}
+
+.items_container li:hover {
+    background: #aaa;
+    color: #fff;
+}
