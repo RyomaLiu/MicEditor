@@ -1,5 +1,5 @@
 :root {
-    --mic-menu-height:50px;
+    --mic-menu-height: 50px;
 }
 
 
@@ -25,6 +25,7 @@
     position: relative;
 }
 
+
 .mic_main {
     height: calc(70vh - var(--mic-menu-height) - (15px * 2));
     width: calc(100% - (20px * 2));
@@ -44,9 +45,9 @@
     height: var(--mic-menu-height);
 }
 
-.items_container li {
+.items_container > li {
     list-style: none;
-    min-width: 30px;
+    width: 30px;
     flex-direction: column;
     vertical-align: middle;
     text-align: center;
@@ -61,7 +62,26 @@
     border-right: solid #ddd 1.5px;
 }
 
-.items_container li:hover {
+.items_container > li:hover {
     background: #aaa;
     color: #fff;
+}
+
+.items_container ul {
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+}
+
+.items_container ul > li {
+    list-style: none;
+    width: 50px;
+    flex-direction: row;
+    display: inline-block;
+    background: #eeb;
+    top: 50px;
+}
+
+.items_container ul > li:hover {
+    background: #aaa;
 }
