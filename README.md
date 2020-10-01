@@ -1,1 +1,3 @@
 # MicEditor
+
+![MicEditor](./MicEditor.PNG)
