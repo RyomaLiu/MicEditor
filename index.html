@@ -3,13 +3,19 @@
 <head>
 
     <meta charset="utf-8">
-    <script src="js/jquery-3.5.1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!--    <script src="js/jquery-3.5.1.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.10.4/polyfill.min.js"></script>
     <script src="js/miceditor.js"></script>
     <link rel="stylesheet" href="css/miceditor.css">
     <script>
-        $(document).ready(function() {
-            MicEditor.create('miceditor').editable(true);
-        });
+        window.onload = function() {
+//            alert(1);
+            let micEditor = new MicEditor('miceditor');
+//            alert(2);
+            micEditor.create();
+            
+        };
 
     </script>
 
@@ -17,7 +23,7 @@
 
 
 <body>
-    <div id="miceditor">
+    <div id="miceditor" >
     </div>
 </body>
 

@@ -5,7 +5,7 @@
 
 
 .mic_editor {
-    height: 70vh;
+    height: 95vh;
     width: 95vw;
     background: #ccc;
     margin: auto;
@@ -25,30 +25,39 @@
     position: relative;
 }
 
+ul.mic_menu_items::-webkit-scrollbar {
+    display: none;
+}
 
-.mic_main {
-    height: calc(70vh - var(--mic-menu-height) - (15px * 2));
-    width: calc(100% - (20px * 2));
-    overflow: scroll;
+
+.mic_content {
+    height: calc(95vh - var(--mic-menu-height) - (5px * 2));
+    width: calc(100% - (8px * 2));
+    overflow-y: scroll;
     background: #ddb;
     z-index: 1;
     position: relative;
     outline: none;
-    padding: 15px 20px;
+    padding: 5px 8px;
+    word-break: break-all;
+    line-height: 1.2;
 }
 
 
-ul.items_container {
+ul.mic_menu_items {
     list-style-type: none;
     display: flex;
     padding: 0px;
     margin: 0px;
     height: var(--mic-menu-height);
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
-ul.items_container li {
+ul.mic_menu_items li {
     list-style: none;
     width: 50px;
+    min-width: 50px;
     flex-direction: column;
     vertical-align: middle;
     text-align: center;
@@ -62,16 +71,41 @@ ul.items_container li {
     border-right: solid #ddd 1.5px;
     transition-duration: 0.5s;
     background: #eee;
+    cursor: pointer;
 }
 
-ul.items_container > li:hover {
+ul.mic_menu_items > li:hover {
     background: #bbb;
 }
 
-ul.items_container li svg {
+ul.mic_menu_items > li:focus {
+    background: #bbb;
+}
+
+ul.mic_menu_items li svg {
     vertical-align: middle;
 }
 
-ul.items_container li:hover > svg {
+ul.mic_menu_items li:hover > svg {
     fill: #cff;
+}
+
+/*
+
+@media screen and (orientation:portrait) {
+    body {
+        background: red;
+    }
+}
+
+@media screen and (orientation:landscape) {
+    body {
+        background: green;
+    }
+}
+*/
+
+.bold-class{
+    font-weight: bold;
+    color: red;
 }
