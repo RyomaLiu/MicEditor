@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+    <!-- hilight.js -->
+    <link rel="stylesheet" href="../css/highlight-styles/docco.css">
+    <script src='../js/highlight.js'></script>
+
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+    <script src="../js/highlightjs-line-numbers.js"></script>
+    <link rel="stylesheet" href="../css/highlight-line-number.css">
+
+    <script>
+        function OK() {
+            let codeInput = document.querySelector('.code-input');
+
+            let html = document.querySelector('pre code#code001');
+            html.style.fontSize = "15px";
+            if (!html.classList.contains("language-html")) html.classList.add("language-html");
+            html.innerHTML = codeInput.value.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+
+
+            document.querySelectorAll("pre code#code001").forEach((block) => {
+                hljs.highlightBlock(block);
+                hljs.lineNumbersBlock(block);
+            });
+        }
+
+        function COPY() {
+            let copyText = "";
+            document.querySelectorAll("pre code#code001 .hljs-ln-code pre").forEach((line) => {
+                copyText += line.textContent + "\r\n";
+            });
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(copyText);
+            }
+        }
+
+        function EDIT(id) {
+            let textF = document.querySelector(".code-input");
+            let copyText = "";
+            document.querySelectorAll("pre code#code001 .hljs-ln-code pre").forEach((line) => {
+                copyText += line.textContent + "\r\n";
+            });
+            textF.value = copyText;
+
+        }
+
+        function addcode() {
+            let codeAreaCount = document.querySelectorAll('pre code').length
+        }
+    </script>
+
+    <style>
+        .code-input {
+            height: 30vh;
+            width: 80vw;
+            background: #cc9;
+            resize: none;
+            overflow: scroll;
+            outline: none;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #00f transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="align-items: center;display: block;">
+        <textarea class="code-input" contenteditable="true"></textarea>
+        <button onclick="OK()" style="margin-top: 20px; width: 80vw;">OK</button>
+        <button onclick="COPY()" style="margin-top: 20px; width: 80vw;">COPY</button>
+        <button onclick="EDIT('code001')" style="margin-top: 20px; width: 80vw;">EDIT</button>
+
+    </div>
+    <button id="btn-addcode" onclick="addcode();return; ">ADD CODE SNIPPETS</button>
+
+    <pre><code id="code001"></code></pre>
+
+</body></html>

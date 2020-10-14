@@ -1,0 +1,127 @@
+.acsnp-modal {
+    height: 100vh;
+    width: 100vw;
+    background: rgb(0, 0, 0, 0.55);
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 999;
+    transition: all 0.5s;
+
+}
+
+.acsnp-main-container {
+    height: 80%;
+    width: 70%;
+    margin: auto;
+}
+
+.acsnp-opt-area {
+    background: #fff;
+    /*    border-bottom: solid 0.5px rgb(0, 0, 0, 0.55);*/
+    height: 7%;
+    width: 100%;
+    display: table;
+}
+
+.acsnp-title {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.acsnp-btn-primary,
+.acsnp-btn-regular {
+    display: table-cell;
+    vertical-align: middle;
+    left: 10px;
+    text-align: center;
+    margin: 5px 10px;
+    color: #fff;
+    user-select: none;
+    -webki-user-select: none;
+    -moz-user-select: none;
+    border-left: solid 2px #fff;
+    padding: 0px 5px;
+    width: 80px;
+    max-width: 200px;
+}
+
+.acsnp-btn-primary {
+    background: #f00;
+}
+
+.acsnp-btn-regular {
+    background: #33d;
+}
+
+.acsnp-btn-regular:hover {
+    cursor: pointer;
+    background: #33f;
+}
+
+.acsnp-btn-regular:active {
+    background: #33c;
+}
+
+.acsnp-btn-primary:hover {
+    cursor: pointer;
+    background: #e00;
+}
+
+.acsnp-btn-primary:active {
+    cursor: pointer;
+    background: #c00;
+}
+
+
+.acsnp-code-snippet-preview,
+.acsnp-code-snippet-input {
+    resize: none;
+    outline: none;
+    padding: 10px 15px;
+    height: calc(93% - 10px - 10px);
+    width: calc(100% - 15px - 15px);
+    background: #fff;
+    font-size: 16px;
+    border: none;
+    background: rgb(255, 255, 255, 0.9);
+}
+
+.acsnp-code-snippet-preview {
+    display: none;
+    overflow: scroll;
+    padding: 0px;
+    height: 93%;
+    width: 100%;
+
+    user-select: none;
+    -webki-user-select: none;
+    -moz-user-select: none;
+
+}
+
+
+/*スクロールバー全体*/
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+}
+
+/*スクロールバーの軌道*/
+::-webkit-scrollbar-track {
+    width: 5px;
+    background: transparent;
+}
+
+/*スクロールバーの動く部分*/
+::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: #00f;
+}

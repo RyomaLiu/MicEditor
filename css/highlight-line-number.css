@@ -1,0 +1,93 @@
+/* for block of numbers */
+
+.hljs-ln {
+    width: 100%;
+
+}
+
+/*
+pre code.hljs {
+    padding: 0px;
+    background: none;
+}
+*/
+
+.hljs{
+    padding: 0px;
+}
+
+
+td.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: center;
+    color: #fff;
+    border-right: 1px solid #aaa;
+    vertical-align: top;
+    padding-left: 2px;
+    padding-right: 2px;
+    background: #bcc;
+    display: table-cell;
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+    /* your custom style here */
+}
+
+td.hljs-ln-code {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+/* for block of code */
+td.hljs-ln-code pre {
+    padding-left: 5px !important;
+    line-height: 100%;
+    display: table-cell;
+}
+
+.hljs-ln tr:nth-child(odd) {
+    background: #ccc;
+}
+
+.hljs-ln tr:nth-child(even) {
+    background: #cca;
+}
+
+.hljs-ln tr:first-child td {
+    padding-top: 15px;
+}
+
+.hljs-ln tr:last-child td {
+    padding-bottom: 15px;
+}
+
+.hljs {
+    border-color: #400 #700 #700 #400;
+    margin: 0px;
+}
+
+/*スクロールバー全体*/
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+}
+
+/*スクロールバーの軌道*/
+::-webkit-scrollbar-track {
+    width: 5px;
+    background: transparent;
+}
+
+/*スクロールバーの動く部分*/
+::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: #00f;
+}
