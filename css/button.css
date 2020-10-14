@@ -1,0 +1,40 @@
+.btn-normal {
+
+    height: 35px;
+    border-style: none;
+    background: #33e;
+    color: #fff;
+    outline: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    font-weight: 400;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+}
+
+.btn-normal:hover {
+    background: #33d;
+}
+
+.btn-normal:active {
+    background: #33c;
+    color: #fff;
+    outline: none;
+}
+
+/*******************************************************************************/
+html,
+body,
+div {
+    padding: 0px;
+    margin: 0px;
+}
+
+.full-screen {
+    width: 100vw;
+    height: 100vh;
+    background: #eeecec;
+    display: flex;
+    flex-direction: column;
+}
