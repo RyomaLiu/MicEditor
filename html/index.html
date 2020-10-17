@@ -1,29 +1,105 @@
+<!DOCTYPE html>
 <html>
 
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <!--    <script src="js/jquery-3.5.1.js"></script>-->
-    <script src="js/miceditor.js"></script>
-    <link rel="stylesheet" href="css/miceditor.css">
+    <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/tmp.css">
+
     <script>
-        window.onload = function() {
-//            alert(1);
-            let micEditor = MicEditor('miceditor');
-//            alert(2);
-            micEditor.create();
-            
-        };
+         window.addEventListener('DOMContentLoaded', () => {
+            let d = document.createElement('ul');
+            const languages = 'zephir*abnf*accesslog*actionscript*ada*angelscript*apache*applescript*arcade*arduino*armasm*asciidoc*aspectj*autohotkey*autoit*avrasm*awk*axapta*bash*basic*bnf*brainfuck*c*cal*capnproto*ceylon*clean*c-like*clojure*clojure-repl*cmake*coffeescript*coq*cos*cpp*crmsh*crystal*csharp*csp*css*d*dart*delphi*diff*django*dns*dockerfile*dos*dsconfig*dts*dust*ebnf*elixir*elm*erb*erlang*erlang-repl*excel*fix*flix*fortran*fsharp*gams*gauss*gcode*gherkin*glsl*gml*go*golo*gradle*groovy*haml*handlebars*haskell*haxe*hsp*htmlbars*http*hy*inform7*ini*irpf90*isbl*java*javascript*jboss-cli*json*julia*julia-repl*kotlin*lasso*latex*ldif*leaf*less*lisp*livecodeserver*livescript*llvm*lsl*lua*makefile*markdown*mathematica*matlab*maxima*mel*mercury*mipsasm*mizar*mojolicious*monkey*moonscript*n1ql*nginx*nim*nix*nsis*objectivec*ocaml*openscad*oxygene*parser3*perl*pf*pgsql*php*php-template*plaintext*pony*powershell*processing*profile*prolog*properties*protobuf*puppet*purebasic*python*python-repl*q*qml*r*reasonml*rib*roboconf*routeros*rsl*ruby*ruleslanguage*rust*sas*scala*scheme*scilab*scss*shell*smali*smalltalk*sml*sqf*sql*stan*stata*step21*stylus*subunit*swift*taggerscript*tap*tcl*thrift*tp*twig*typescript*vala*vbnet*vbscript*vbscript-html*verilog*vhdl*vim*x86asm*xl*xml*xquery*yaml';
+            languages.split('*').sort().forEach((lg) => {
+                d.innerHTML = d.innerHTML + `<li>${lg}</li>`;
+            });
+            let i = document.querySelector('input');
+
+            i.oninput = (evt) => {
+
+                d.querySelectorAll('li').forEach((item) => {
+                    item.style.display = 'none';
+                    item.style.textAlign = 'center';
+                    item.style.borderBottom = 'solid 2px #ccc';
+                    if (item.textContent.match(`${i.value}`)) {
+                        item.style.display = 'block';
+
+                        item.addEventListener('click', (tt) => {
+                            i.value = item.textContent;
+                        });
+                    }
+                });
+            };
+
+
+            i.onfocus = () => {
+                let rect = i.getBoundingClientRect();
+
+                d.style.width = rect.width + 'px';
+                d.style.left = rect.left + 'px';
+                d.style.right = rect.right + 'px';
+                d.style.overflow = 'scroll';
+                d.style.listStyle = 'none';
+                d.style.height = '0px';
+                d.style.margin = '0px';
+                d.style.padding = '0px';
+                d.style.background = '#ffc';
+                d.style.maxHeight = '300px';
+                d.style.height = 'auto';
+                d.style.position = 'fixed';
+                d.style.opacity = 0;
+                d.style.top = rect.top + rect.height + 'px';
+                setTimeout(() => {
+                    d.style.opacity = 1;
+                }, 0);
+                d.style.transition = 'all .3s';
+
+                document.body.appendChild(d);
+
+
+
+                i.onblur = (evt) => {
+                    d.style.opacity = 0;
+                    setTimeout(() => {
+
+                        d.parentElement.removeChild(d);
+                    }, 300);
+                };
+
+            };
+
+
+        });
 
     </script>
 
+    <style>
+        input {
+            width: 300px;
+            height: 30px;
+            outline: inherit;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%) translateY(-50%);
+            top: 50%;
+
+        }
+
+        ul li {
+            display: none;
+        }
+
+        ul li:hover {
+            background: #dde;
+        }
+
+    </style>
 </head>
 
 
 <body>
-    <div id="miceditor" >
-    </div>
+    <input type="text">
 </body>
 
 </html>
